@@ -1,0 +1,16 @@
+name: MassCommand
+main: ca.kanoa.masscommand.MassCommand
+version: 1.00.000
+author: Kanoa Haley
+
+permissions:
+    mass.command:
+        description: Allows use of /mass
+        default: op
+
+commands:
+    mass:
+        description: Executes the command in the config for all the variables inside the mass.txt file
+        usage: /<command>
+        permission: mass.command
+        permission-message: You don't have permission!

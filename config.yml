@@ -1,0 +1,7 @@
+#This is the command that will be ran with the variables when /mass is used
+# use %varNUM where num is the variable
+# NUM starts at 1 and goes up from there, you can use as many as you want as long as there is
+# that many in the text file
+# If you specify more variables than a line in the text file has, the plugin will replace them with 0's 
+# In the text file the variables are the strings between the spaces
+command: /eco pay %var1 %var2
