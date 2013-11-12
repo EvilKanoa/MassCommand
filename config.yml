@@ -4,4 +4,4 @@
 # that many in the text file
 # If you specify more variables than a line in the text file has, the plugin will replace them with 0's 
 # In the text file the variables are the strings between the spaces
-command: /eco pay %var1 %var2
+command: /economy give %var1 %var2

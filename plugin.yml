@@ -1,6 +1,6 @@
 name: MassCommand
 main: ca.kanoa.masscommand.MassCommand
-version: 1.00.000
+version: 1.00.001
 author: Kanoa Haley
 
 permissions:
