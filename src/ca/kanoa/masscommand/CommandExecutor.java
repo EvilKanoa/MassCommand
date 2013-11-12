@@ -2,6 +2,7 @@ package ca.kanoa.masscommand;
 
 import java.io.File;
 
+import org.bukkit.Bukkit;
 import org.bukkit.ChatColor;
 import org.bukkit.command.Command;
 import org.bukkit.command.CommandSender;
@@ -24,9 +25,29 @@ public class CommandExecutor implements org.bukkit.command.CommandExecutor {
 			return true;
 		}
 		
+		sender.sendMessage("Loading mass.txt file...");
 		String[] lines = FileReader.readTextFile(mass).split("\n");
+		sender.sendMessage("File loading, starting command executing...");
 		
-		return false;
+		String command = MassCommand.getCommand();
+		String temp = command;
+		if (command.startsWith("/")) {
+			command = command.substring(1);
+		}
+		
+		for (String s : lines) {
+			temp = command;
+			sender.sendMessage("");
+			Variables vars = new Variables(s);
+			for (int i = 1; i <= vars.getNumberOfVars(); i++) {
+				temp = temp.replace("%var" + i, vars.getVar(i));
+			}
+			sender.sendMessage("Executing " + ChatColor.RED + "/" + temp + 
+					ChatColor.RESET + " now...");
+			Bukkit.dispatchCommand(sender, temp);
+		}
+		
+		return true;
 	}
 
 }

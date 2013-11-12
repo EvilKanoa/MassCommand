@@ -69,7 +69,7 @@
   	<jar destfile="${dist.dir}\${project.name}.jar" basedir="${build.dir}">
       <zipfileset dir="." includes="plugin.yml"/>
       <zipfileset dir="." includes="config.yml"/>
-      <zipgroupfileset dir="${include.dir}" includes="**/*.jar" />
+      <!-- <zipgroupfileset dir="${include.dir}" includes="**/*.jar" /> -->
   	  <!-- This is where you add files to the final jar -->
     </jar>
   </target>
